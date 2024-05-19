@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="single-welcome-slide bg-img bg-overlay" style="background-image: url( ../static/img/bg-img/16.jpg );" data-img-url="img/bg-img/16.jpg">
+    <!-- Welcome Content -->
+    <div class="welcome-content h-100">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <!-- Welcome Text -->
+                <div class="col-12">
+                    <div class="welcome-text text-center">
+                        <h6 data-animation="fadeInLeft" data-delay="300ms">Hotel &amp; Resort</h6>
+                        <h2 data-animation="fadeInLeft" data-delay="600ms">Welcome To Islombek</h2>
+                        <a href="{% url 'salom' %}" class="btn roberto-btn btn-2" data-animation="fadeInLeft" data-delay="800ms">Discover Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" >
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+<button type="submit" class="btn btn-success">save</button>
+</form>
+{% endblock content %}
