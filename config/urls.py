@@ -18,13 +18,15 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings  
 from django.conf.urls.static import static  
-from hotel.views import home,category,batafsil,single,delete,create,update,salom
+from hotel.views import home,category,batafsil,single,delete,create,update,salom,alik,singlet
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name='home'),
     path('single/',single,name='single'),
+    path('singlet/',singlet,name='singlet'),
     path('create/',create,name='create'),
     path('salom/',salom,name='salom'),
+    path('alik/<int:id>/',alik,name='alik'),
 
     path('category/<int:id>/',category,name='category'),
     path('batafsil/<int:id>/',batafsil,name='batafsil'),
