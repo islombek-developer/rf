@@ -20,7 +20,6 @@ def single(request):
     return render(request, 'single.html', context={"products": products, "cats": categories})
 
 
-
 def category(request, id):
     cat = get_object_or_404(Category, id=id)
     products = cat.products.all().order_by('name')
